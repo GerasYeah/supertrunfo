@@ -6,8 +6,8 @@
  */
 
 // Variáveis para armazenar as propriedades das cartas
-char codigoA[4], estadoA[3], cidadeA[31];
-char codigoB[4], estadoB[3], cidadeB[31];
+char codigoA[3], estadoA[2], cidadeA[31];
+char codigoB[3], estadoB[2], cidadeB[31];
 
 unsigned long int populacaoA, populacaoB;
 int pontosTuristicosA, pontosTuristicosB;
