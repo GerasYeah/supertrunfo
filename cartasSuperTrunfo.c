@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-/* Desafio Cartas Super Trunfo - Países
+/* Desafio 01: Cartas de Super Trunfo - Países (Nível Mestre)
  * Introdução à programação de Computadores (Prof. Sérgio Cardoso)
  * Desenvolvido por Geras
  */
 
 // Variáveis para armazenar as propriedades das cartas
-char codigoA[3], estadoA[2], cidadeA[31];
-char codigoB[3], estadoB[2], cidadeB[31];
+char codigoA[3], estadoA[2], cidadeA[21];
+char codigoB[3], estadoB[2], cidadeB[21];
 
 unsigned long int populacaoA, populacaoB;
 int pontosTuristicosA, pontosTuristicosB;
@@ -20,24 +20,20 @@ float pibPerCapitaA, pibPerCapitaB;
 float superPoderA, superPoderB;
 
 // Métodos/funções
-float calcularPibPerCapita(float pib, int populacao)
-{
+float calcularPibPerCapita(float pib, int populacao) {
     float pibPerCapita = pib / populacao;
     return pibPerCapita;
 }
 
-float calcularDensidadePopulacional(float populacao, int area)
-{
+float calcularDensidadePopulacional(float populacao, int area) {
     float densidadePopulacional = populacao / area;
     return densidadePopulacional;
 }
 
-float calcularSuperPoder(unsigned long int populacao, int pontosTuristicos, float area, float pib, float pibPerCapita, float densidadePopulacional)
-{
+float calcularSuperPoder(unsigned long int populacao, int pontosTuristicos, float area, float pib, float pibPerCapita, float densidadePopulacional) {
     // Inverter o valor da densidade populacional
     float densidadePopulacionalInvertida;
-    if (densidadePopulacional > 0)
-    {
+    if (densidadePopulacional > 0) {
         densidadePopulacionalInvertida = 1.0 / densidadePopulacional;
     }
     // Somar todos os valores e retornar
@@ -45,15 +41,13 @@ float calcularSuperPoder(unsigned long int populacao, int pontosTuristicos, floa
     return superPoder;
 }
 
-void imprimirComparacao(char propriedade[], int resultado)
-{
+void imprimirComparacao(char propriedade[], int resultado) {
     // Exibir a comparação de um atributo específico
     int cartaVencedora = resultado == 1 ? 1 : 2;
     printf("%s: A carta %d venceu! (%d)\n", propriedade, cartaVencedora, resultado);
 }
 
-void compararCartas()
-{
+void compararCartas() {
     // Comparar e exibir atributos um por um
     imprimirComparacao("População", populacaoA > populacaoB);
     imprimirComparacao("Área", areaA > areaA);
@@ -64,8 +58,7 @@ void compararCartas()
     imprimirComparacao("Super Poder", superPoderA > superPoderB);
 }
 
-int main()
-{
+int main() {
     // Cadastrar carta 1
     printf("Digite a letra do Estado (de A a H): ");
     scanf("%1s", estadoA);
@@ -74,7 +67,7 @@ int main()
     scanf("%2s", codigoA);
 
     printf("Digite o nome da cidade: ");
-    scanf("%30s", cidadeA);
+    scanf("%20s", cidadeA);
 
     printf("Digite o total de habitantes: ");
     scanf("%ld", &populacaoA);
@@ -113,7 +106,7 @@ int main()
     scanf("%2s", codigoB);
 
     printf("Digite o nome da cidade: ");
-    scanf("%30s", cidadeB);
+    scanf("%20s", cidadeB);
 
     printf("Digite a população: ");
     scanf("%ld", &populacaoB);
